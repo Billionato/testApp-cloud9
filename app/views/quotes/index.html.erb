@@ -1,1 +1,13 @@
-<h1>This is the "home#index" page</h1>
+<h1>Homepage</h1>
+<%= link_to "New Quote", new_quote_path %>
+
+<% @quotes.each do |quote| %>
+    <div>
+        <h3><%= quote.author %></h3>
+        <p><%= quote.body %></p>
+        <p><%= time_ago_in_words quote.created_at %> ago</p>
+        <div class"links">
+            <%= link_to "View", quote_path(quote) %>
+        </div>
+    </div>
+<% end %>
