@@ -11,11 +11,11 @@ class QuotesController < ApplicationController
     end
     
     def new
-        @quote = Quote.new
+        @quote = current_user.quotes.build
     end
     
     def create
-        @quote = Quote.new(quote_params)
+        @quote = current_user.quotes.build(quote_params)
         
         if @quote.save
             redirect_to @quote, notice: "Successfully created quote"
