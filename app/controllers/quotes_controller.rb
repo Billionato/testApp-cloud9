@@ -18,9 +18,23 @@ class QuotesController < ApplicationController
         @quote = Quote.new(quote_params)
         
         if @quote.save
-            redirect_to @quote, notice: "Quote successfully created"
+            redirect_to @quote, notice: "Successfully created quote"
         else
             render new
+        end
+    end
+    
+    def edit
+        @quote = Quote.find(params[:id])
+    end
+    
+    def update
+        @quote = Quote.find(params[:id])
+        
+        if @quote.update_attributes(quote_params)
+            redirect_to @quote
+        else
+            render edit
         end
     end
     
