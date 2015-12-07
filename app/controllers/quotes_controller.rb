@@ -1,5 +1,7 @@
 class QuotesController < ApplicationController
     
+    before_action :authenticate_user!, except: [:index, :show]
+    
     def index
         @quotes = Quote.order(created_at: :desc)
     end
