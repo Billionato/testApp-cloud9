@@ -1,0 +1,30 @@
+$white: #FFFFFF;
+$highlight: #d2674e;
+$dark: #22292e;
+$light: #EDEFF5;
+
+.wrapper_wide {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.wrapper_skinny {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+@import 'normalize';
