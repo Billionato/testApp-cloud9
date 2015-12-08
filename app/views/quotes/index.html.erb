@@ -1,7 +1,7 @@
-<h1>Homepage</h1>
-<%= link_to "New Quote", new_quote_path %>
-
 <div class="wrapper_wide">
+    <h1>Homepage</h1>
+    <%= link_to "New Quote", new_quote_path %>
+    
     <% @quotes.each do |quote| %>
         <div>
             <h3><%= quote.author %></h3>
@@ -13,6 +13,3 @@
         </div>
     <% end %>
 </div>
-
-
-<p>This better be working</p>

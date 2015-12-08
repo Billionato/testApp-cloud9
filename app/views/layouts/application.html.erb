@@ -7,15 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
 <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert alert-info") %>
 <% end %>
 
-<% if user_signed_in? %>
-  <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-  <p><%= link_to "Account Settings", edit_user_registration_path %></p>
-<% end %>
+<%= render 'layouts/header' %>
 
 <%= yield %>
 
