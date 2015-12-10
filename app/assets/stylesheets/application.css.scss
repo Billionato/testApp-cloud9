@@ -28,31 +28,36 @@ $light: #EDEFF5;
 }
 
 #main_header {
-	color: $dark;
-	background: $white;
-	padding: 2.5rem 0;
+	background: $light;
+	padding: 1.5rem 0;
+	
 	#logo {
 		float: left;
 		text-transform: uppercase;
-		font-weight: 700;
-		color: $dark;
 		text-decoration: none;
+		font-weight: 700;
+		font-size: 1.5rem;
+		color: $dark;
+		letter-spacing: 1.5px;
 	}
-	nav {
+	
+	ul {
 		float: right;
-		ul {
-			list-style: none;
-			margin: 0;
-			li {
-				display: inline;
-				margin-left: 2.5rem;
-				a {
-					color: $dark;
-					text-decoration: none;
-				}
+		list-style: none;
+		margin: 0; //remove default margin on ul
+		padding-top: 0.25rem;
+		li {
+			display: inline;
+			margin-left: 2rem;
+			a {
+				text-decoration: none;
+				color: $dark;
+				font-weight: 500;
 			}
 		}
 	}
 }
 
+
 @import 'normalize';
+@import 'quotes';
