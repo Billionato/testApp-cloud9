@@ -1,10 +1,11 @@
 $white: #FFFFFF;
+$grey: #E9E9E9;
 $highlight: #d2674e;
 $dark: #22292e;
 $light: #EDEFF5;
 
 body {
-	font-family: 'Open Sans', sans-serif;	
+	font-family: 'Open Sans', sans-serif;
 }
 
 .wrapper_wide {
@@ -32,7 +33,7 @@ body {
 }
 
 #main_header {
-	background: $light;
+	background: $white;
 	padding: 1.5rem 0;
 	
 	#logo {
@@ -64,7 +65,6 @@ body {
 		}
 	}
 }
-
 
 @import 'normalize';
 @import 'quotes';
