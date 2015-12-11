@@ -57,6 +57,9 @@ body {
 				text-decoration: none;
 				color: $dark;
 				font-weight: 500;
+				&:hover {
+					color: $highlight;
+				}
 			}
 		}
 	}

@@ -1,0 +1,36 @@
+#banner {
+    //background-image: image-url("image_name.jpg")
+}
+
+.quote_object {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 2rem;
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    color: $dark;
+    background-color: lighten($highlight, 10%);
+    .quote_body {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .quote_author
+    {
+        text-transform: uppercase;
+    }
+    .divider {
+        height: 0.25rem;
+        width: 50%;
+        background: $dark;
+        margin: 0 auto;
+        border-radius: 1rem;
+    }
+    a {
+        text-decoration: none;
+    }
+    &:hover {
+        background: $highlight;
+        cursor: pointer;
+    }
+}
