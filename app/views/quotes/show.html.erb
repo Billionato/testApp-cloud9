@@ -7,4 +7,14 @@
         <%= link_to "Edit", edit_quote_path(@quote) %>
         <%= link_to "Back", root_path %>
     </div>
+    <%= link_to like_quote_path(@quote), method: :put do %>
+        <i class="fa fa-chevron-up"></i>
+        Upvote
+        <%= @quote.get_upvotes.size %>
+    <% end %>
+    <%= link_to dislike_quote_path(@quote), method: :put do %>
+        <i class="fa fa-chevron-down"></i>
+        Downvote
+        <%= @quote.get_downvotes.size %>
+    <% end %>
 </div>

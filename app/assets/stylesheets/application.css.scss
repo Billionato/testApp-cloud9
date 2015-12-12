@@ -1,5 +1,7 @@
 $white: #FFFFFF;
 $grey: #E9E9E9;
+$green: lightgreen;
+$red: #FF0000;
 $highlight: #d2674e;
 $dark: #22292e;
 $light: #EDEFF5;
@@ -31,6 +33,42 @@ body {
 .cf:after {
 	clear: both;
 }
+
+.vote_links
+{
+	.button_vote {
+		border: 0.1rem solid $dark;
+		margin-left: 1rem;
+		padding: 0.75rem 0.75rem;
+		border-radius: 100%;
+		font-size: 0.75rem;
+		min-width: 5rem;
+	}
+	.button_vote_up {
+		&:hover {
+			background: darken($green, 25%);
+			color: $white;
+		}
+	}
+	.button_vote_down {
+		&:hover {
+			background: $red;
+			color: $white;
+		}
+	}
+	.voted_up {
+		background: darken($green, 25%);
+		color: $white;
+	}
+	.voted_down {
+		background: $red;
+		color: $white;
+	}
+	
+}
+
+
+
 
 #main_header {
 	background: $white;

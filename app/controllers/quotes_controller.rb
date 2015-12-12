@@ -38,6 +38,18 @@ class QuotesController < ApplicationController
         end
     end
     
+    def upvote
+        @quote = Quote.find(params[:id])
+        @quote.upvote_by current_user
+        redirect_to :back #redirects to page user was currently on
+    end
+    
+    def downvote
+        @quote = Quote.find(params[:id])
+        @quote.downvote_by current_user
+        redirect_to :back
+    end
+    
     private
     
     def quote_params
