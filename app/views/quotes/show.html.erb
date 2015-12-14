@@ -1,20 +1,30 @@
-<h2>Show Page</h2>
-
-<div>
-    <h3><%= @quote.author %></h3>
-    <p><%= @quote.body %></p>
-    <div class"links">
-        <%= link_to "Edit", edit_quote_path(@quote) %>
-        <%= link_to "Back", root_path %>
+<div class="wrapper">
+    <div class="quote_object">
+        <div class="quote_nav">
+            <%= link_to edit_quote_path(@quote) do %>
+                <i class="fa fa-pencil-square-o"></i>
+                Edit
+            <% end %>
+        </div>
+        <p class="quote_body"><%= @quote.body %></p>
+        <div class="divider"></div><!-- divides body and author -->
+        <h4 class="quote_author"><%= @quote.author %></h4>
+        <div class="vote_links">
+            <%= link_to like_quote_path(@quote), method: :put, class: "button_vote button_vote_up" do %>
+                <i class="fa fa-thumbs-up"></i>
+                <%= @quote.get_upvotes.size %>
+            <% end %>
+            <%= link_to dislike_quote_path(@quote), method: :put, class: "button_vote button_vote_down" do %>
+                <i class="fa fa-thumbs-down"></i>
+                <%= @quote.get_downvotes.size %>
+            <% end %>
+        </div>
     </div>
-    <%= link_to like_quote_path(@quote), method: :put do %>
-        <i class="fa fa-chevron-up"></i>
-        Upvote
-        <%= @quote.get_upvotes.size %>
-    <% end %>
-    <%= link_to dislike_quote_path(@quote), method: :put do %>
-        <i class="fa fa-chevron-down"></i>
-        Downvote
-        <%= @quote.get_downvotes.size %>
-    <% end %>
+    
+    <div id="context" class="cf">
+        <div class="text_space">
+            <p>This is where the context will be.</p>
+        </div>
+    </div>
 </div>
+
