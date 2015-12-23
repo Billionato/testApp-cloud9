@@ -1,28 +1,30 @@
 <div class="banner">
     <div class="quote_object">
         <div class="quote_nav">
-            <div class="share_links">
-                <% unless current_user.twitter.blank? %>
-                    <div class="share_container">
-                        <i class="fa fa-twitter"></i>
-                    </div>
-                <% end %>    
-                <% unless current_user.facebook.blank? %>
-                    <div class="share_container">
-                        <i class="fa fa-facebook"></i>
-                    </div>
-                <% end %>  
-                <% unless current_user.instagram.blank? %>
-                    <div class="share_container">
-                        <i class="fa fa-instagram"></i>
-                    </div>
-                <% end %>  
-                <% unless current_user.pinterest.blank? %>
-                    <div class="share_container">
-                        <i class="fa fa-pinterest-p"></i>
-                    </div>
-                <% end %>  
-            </div>
+            <% if user_signed_in? %>
+                <div class="share_links">
+                    <% unless current_user.twitter.blank? %>
+                        <div class="share_container">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                    <% end %>    
+                    <% unless current_user.facebook.blank? %>
+                        <div class="share_container">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                    <% end %>  
+                    <% unless current_user.instagram.blank? %>
+                        <div class="share_container">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                    <% end %>  
+                    <% unless current_user.pinterest.blank? %>
+                        <div class="share_container">
+                            <i class="fa fa-pinterest-p"></i>
+                        </div>
+                    <% end %>  
+                </div>
+            <% end %>
             <div class="utility_links">
                 <%= link_to edit_quote_path(@quote) do %>
                     <i class="fa fa-pencil-square-o"></i>
