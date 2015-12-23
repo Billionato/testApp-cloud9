@@ -2,8 +2,65 @@ body {
     background: $white;
 }
 
-#banner {
-    //background-image: image-url("image_name.jpg")
+.banner {
+    background-image: image-url("nasa_space.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    //opacity: 0.75;
+    .quote_object {
+        background-color: $semi_transparent;
+        color: $white;
+        padding: 8rem;
+        .quote_nav {
+            a {
+                color: $white;
+            }
+        }
+        .quote_body {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .quote_author {
+            font-size: 1.25rem;
+        }
+        .divider {
+            background: $white;
+        }
+        #credit {
+            position: absolute;
+            bottom: 0rem;
+            left: 2rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        &:hover {
+            background: $semi_transparent;
+            cursor: default;
+        }
+    }
+    .vote_links {
+        margin-top: 2rem;
+        .button_vote {
+            border: none;
+            color: $white;
+            font-size: 1.25rem;
+        }
+        .button_vote_up {
+            &:hover {
+                background: $white;
+                color: $dark;
+            }
+        }
+        .button_vote_down {
+            &:hover {
+                background: $white;
+                color: $dark;
+            }
+        }
+    }
 }
 
 .quote_object {
@@ -16,9 +73,28 @@ body {
     text-align: center;
     background-color: lighten($highlight, 10%);
     .quote_nav {
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
+        .utility_links {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+        }
+        .share_links {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            .share_container {
+                display: inline-block;
+                //border: 0.1rem solid $white;
+                padding: 0.75rem 0.75rem;
+                border-radius: 5rem;
+                font-size: 1rem;
+                margin: 0 0.5rem 0 0;
+                &:hover {
+                    background: $highlight;
+                    cursor: pointer;
+                }
+            }
+        }
     }
     .quote_body {
         font-size: 1.5rem;
@@ -45,14 +121,6 @@ body {
     }
 }
 
-#context {
-    float: right;
-    width: 65%;
-    margin-top: 1rem;
-    overflow: auto;
-    border: 0.25rem solid $dark;
-    background: $white;
-    .text_space {
-        padding: 2rem 2rem;
-    }
+.context {
+    text-align: center;
 }
