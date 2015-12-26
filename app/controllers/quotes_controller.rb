@@ -8,6 +8,8 @@ class QuotesController < ApplicationController
     
     def show
         @quote = Quote.find(params[:id])
+        
+        @context = Context.find_by(quote_id: @quote.id)
     end
     
     def new
