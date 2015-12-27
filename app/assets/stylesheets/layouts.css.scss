@@ -1,0 +1,79 @@
+$white: #FFFFFF;
+$grey: #E9E9E9;
+$green: lightgreen;
+$red: #FF0000;
+$highlight: #d2674e;
+$dark: #22292e;
+$light: #EDEFF5;
+$semi_transparent: rgba(0,0,0,0.25);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.vote_links
+{
+	.button_vote {
+		border: 0.1rem solid $dark;
+		margin-left: 1rem;
+		padding: 0.75rem 0.75rem;
+		border-radius: 100%;
+		font-size: 0.75rem;
+		min-width: 5rem;
+	}
+	.button_vote_up {
+		&:hover {
+			background: darken($green, 25%);
+			color: $white;
+		}
+	}
+	.button_vote_down {
+		&:hover {
+			background: $red;
+			color: $white;
+		}
+	}
+	.voted_up {
+		background: darken($green, 25%);
+		color: $white;
+	}
+	.voted_down {
+		background: $red;
+		color: $white;
+	}
+	
+}
+
+#main_header {
+	background: $white;
+	padding: 1.5rem 0;
+	
+	#logo {
+		float: left;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1.5rem;
+		color: $dark;
+		letter-spacing: 1.5px;
+	}
+	
+	ul {
+		float: right;
+		list-style: none;
+		margin: 0; //remove default margin on ul
+		padding-top: 0.25rem;
+		li {
+			display: inline;
+			margin-left: 2rem;
+			a {
+				text-decoration: none;
+				color: $dark;
+				font-weight: 500;
+				&:hover {
+					color: $highlight;
+				}
+			}
+		}
+	}
+}

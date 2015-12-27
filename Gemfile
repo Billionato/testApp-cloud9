@@ -25,6 +25,9 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'rdiscount', '~> 2.1', '>= 2.1.8'
 
+#gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

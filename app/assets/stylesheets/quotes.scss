@@ -1,3 +1,12 @@
+// $white: #FFFFFF;
+// $grey: #E9E9E9;
+// $green: lightgreen;
+// $red: #FF0000;
+// $highlight: #d2674e;
+// $dark: #22292e;
+// $light: #EDEFF5;
+// $semi_transparent: rgba(0,0,0,0.25);
+
 body {
     background: $white;
 }
@@ -9,118 +18,22 @@ body {
     background-position: center center;
     text-align: center;
     //opacity: 0.75;
-    .quote_object {
-        background-color: $semi_transparent;
-        color: $white;
-        padding: 8rem;
-        .quote_nav {
-            a {
-                color: $white;
-            }
-        }
-        .quote_body {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        .quote_author {
-            font-size: 1.25rem;
-        }
-        .divider {
-            background: $white;
-        }
-        #credit {
-            position: absolute;
-            bottom: 0rem;
-            left: 2rem;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        &:hover {
-            background: $semi_transparent;
-            cursor: default;
-        }
-    }
-    .vote_links {
-        margin-top: 2rem;
-        .button_vote {
-            border: none;
-            color: $white;
-            font-size: 1.25rem;
-        }
-        .button_vote_up {
-            &:hover {
-                background: $white;
-                color: $dark;
-            }
-        }
-        .button_vote_down {
-            &:hover {
-                background: $white;
-                color: $dark;
-            }
-        }
-    }
 }
 
-.quote_object {
-    position: relative;
-    border-radius: 0.5rem;
+.media {
+    background: $light;
     margin: 1rem;
-    padding: 2rem;
-    width: 25%;
-    display: inline-block;
+    padding: 5rem;
     text-align: center;
-    background-color: lighten($highlight, 10%);
-    .quote_nav {
-        .utility_links {
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-        }
-        .share_links {
-            position: absolute;
-            left: 1rem;
-            top: 1rem;
-            .share_container {
-                display: inline-block;
-                //border: 0.1rem solid $white;
-                padding: 0.75rem 0.75rem;
-                border-radius: 5rem;
-                font-size: 1rem;
-                margin: 0 0.5rem 0 0;
-                &:hover {
-                    background: $highlight;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-    .quote_body {
-        font-size: 1.5rem;
+    .quote-body {
+        font-size: 2.5rem;
         font-weight: 600;
+        margin-bottom: 3rem;
     }
-    .quote_author
-    {
+    .media-heading {
+        border: 0.25rem solid $dark;
         text-transform: uppercase;
+        //width: 50%;
+        padding: 3rem 0;
     }
-    .divider {
-        height: 0.25rem;
-        width: 50%;
-        background: $dark;
-        margin: 0 auto;
-        border-radius: 1rem;
-    }
-    a {
-        text-decoration: none;
-        color: $dark;
-    }
-    &:hover {
-        background: $highlight;
-        cursor: pointer;
-    }
-}
-
-.context {
-    text-align: left;
 }

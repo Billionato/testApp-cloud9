@@ -2,56 +2,17 @@
     <!-- Will be used to test quote of the day -->
 </div>
 
-<div class="wrapper cf">
+<div class="container">
     <% @quotes.each do |quote| %>
-        <%= link_to quote do %>
-            <div class="quote_object">
-                <p class="quote_body"><%= quote.body %></p>
-                <div class="divider"></div><!-- divides body and author -->
-                <h4 class="quote_author"><%= quote.author %></h4>
-                
-                <div class="vote_links">
-                    <% if user_signed_in? %>
-                        <% if current_user.liked? quote %>
-                            <%= link_to like_quote_path(quote), method: :put, class: "button_vote voted_up" do %>
-                                <i class="fa fa-thumbs-up"></i>
-                                <%= quote.get_upvotes.size %>
-                            <% end %>
-                            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
-                                <i class="fa fa-thumbs-down"></i>
-                                <%= quote.get_downvotes.size %>
-                            <% end %>
-                        <% elsif current_user.disliked? quote %>
-                            <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
-                                <i class="fa fa-thumbs-up"></i>
-                                <%= quote.get_upvotes.size %>
-                            <% end %>
-                            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote voted_down" do %>
-                                <i class="fa fa-thumbs-down"></i>
-                                <%= quote.get_downvotes.size %>
-                            <% end %>
-                        <% else %>
-                            <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
-                                <i class="fa fa-thumbs-up"></i>
-                                <%= quote.get_upvotes.size %>
-                            <% end %>
-                            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
-                                <i class="fa fa-thumbs-down"></i>
-                                <%= quote.get_downvotes.size %>
-                            <% end %>
-                        <% end %>
-                    <% else %>
-                        <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
-                            <i class="fa fa-thumbs-up"></i>
-                            <%= quote.get_upvotes.size %>
-                        <% end %>
-                            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
-                            <i class="fa fa-thumbs-down"></i>
-                            <%= quote.get_downvotes.size %>
-                        <% end %>
-                    <% end %>
-                </div>
+        <div class="row">
+            <div class="media">
+              <!--<div class="media-left media-middle">-->
+              <!--</div>-->
+              <div class="media-body">
+                <p class="quote-body"><%= quote.body %></p>
+                <h4 class="media-heading"><%= quote.author %></h4>
+              </div>
             </div>
-        <% end %>
+        </div>
     <% end %>
 </div>
