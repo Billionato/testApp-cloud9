@@ -1,0 +1,41 @@
+<div class="vote_links">
+    <% if user_signed_in? %>
+        <% if current_user.liked? quote %>
+            <%= link_to like_quote_path(quote), method: :put, class: "button_vote voted_up" do %>
+                <i class="fa fa-thumbs-up"></i>
+                <%= quote.get_upvotes.size %>
+            <% end %>
+            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
+                <i class="fa fa-thumbs-down"></i>
+                <%= quote.get_downvotes.size %>
+            <% end %>
+        <% elsif current_user.disliked? quote %>
+            <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
+                <i class="fa fa-thumbs-up"></i>
+                <%= quote.get_upvotes.size %>
+            <% end %>
+            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote voted_down" do %>
+                <i class="fa fa-thumbs-down"></i>
+                <%= quote.get_downvotes.size %>
+            <% end %>
+        <% else %>
+            <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
+                <i class="fa fa-thumbs-up"></i>
+                <%= quote.get_upvotes.size %>
+            <% end %>
+            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
+                <i class="fa fa-thumbs-down"></i>
+                <%= quote.get_downvotes.size %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <%= link_to like_quote_path(quote), method: :put, class: "button_vote button_vote_up" do %>
+            <i class="fa fa-thumbs-up"></i>
+            <%= quote.get_upvotes.size %>
+        <% end %>
+            <%= link_to dislike_quote_path(quote), method: :put, class: "button_vote button_vote_down" do %>
+            <i class="fa fa-thumbs-down"></i>
+            <%= quote.get_downvotes.size %>
+        <% end %>
+    <% end %>
+</div>
