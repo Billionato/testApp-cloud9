@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+#ruby '2.2.1'
+ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use SCSS for stylesheets
@@ -58,3 +59,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+#used to solve date problem when cloning app on local computer
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
