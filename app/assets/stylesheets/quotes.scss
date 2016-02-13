@@ -17,7 +17,7 @@ body {
     background-size: cover;
     background-position: center center;
     text-align: center;
-    //opacity: 0.75;
+    margin-top: -20px;
 }
 
 .media {
@@ -49,6 +49,35 @@ body {
         color: $dark;
         &:hover {
             text-decoration: none;
+        }
+    }
+}
+
+.quote-show-container {
+    .media {
+        background: $semi-transparent;
+        padding: 75px;
+        color: $white;
+        .quote-divider {
+            background: $white;
+        }
+    }
+}
+
+.context {
+    .navbar-default {
+        background: $white;
+        border: none;
+        .btn-default {
+            margin: 10px 5px 0 5px;
+            padding: 10px 15px 10px 15px;
+            &:hover {
+                background: $light;
+            }
+        }
+        #button-utility-link {
+            width: 100%;
+            margin: 0 auto;
         }
     }
 }

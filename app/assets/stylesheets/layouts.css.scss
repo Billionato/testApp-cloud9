@@ -1,6 +1,7 @@
 $white: #FFFFFF;
 $grey: #E9E9E9;
 $green: lightgreen;
+$nice_green: lighten(green, 10%);
 $red: #FF0000;
 $highlight: #d2674e;
 $dark: #22292e;
@@ -79,5 +80,33 @@ body {
                }
            }
         }
+    }
+}
+
+.btn-container {
+    margin: 0 auto;
+    width: 250px;
+    a {
+        color: $white;
+        &:hover {
+            color: $white;
+        }
+    }
+    .btn {
+        padding: 10px 0;
+        background: $nice_green;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        &:hover {
+            background: darken($nice_green,5%);
+        }
+    }
+}
+
+.empty-state-container {
+    .alert {
+        text-align: center;
+        font-size: 16px;
     }
 }

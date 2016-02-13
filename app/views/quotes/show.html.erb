@@ -1,71 +1,50 @@
 <div class="banner">
-    <div class="quote_object">
-        <div class="quote_nav">
-            <% if user_signed_in? %>
-                <div class="share_links">
-                    <% unless current_user.twitter.blank? %>
-                        <div class="share_container">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                    <% end %>    
-                    <% unless current_user.facebook.blank? %>
-                        <div class="share_container">
-                            <i class="fa fa-facebook"></i>
-                        </div>
-                    <% end %>  
-                    <% unless current_user.instagram.blank? %>
-                        <div class="share_container">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    <% end %>  
-                    <% unless current_user.pinterest.blank? %>
-                        <div class="share_container">
-                            <i class="fa fa-pinterest-p"></i>
-                        </div>
-                    <% end %>  
-                </div>
-            <% end %>
-            <div class="utility_links">
-                <%= link_to edit_quote_path(@quote) do %>
-                    <i class="fa fa-pencil-square-o"></i>
-                    Edit
-            <% end %>
+    <div class="quote-show-container">
+            <div class="media">
+              <div class="media-left media-middle">
+              </div>
+              <div class="media-body">
+                <p class="quote-body"><%= @quote.body %></p>
+                <hr class="quote-divider"></hr>
+                <h4 class="media-heading"><%= @quote.author %></h4>
+              </div>
             </div>
-        </div>
-        <p class="quote_body"><%= @quote.body %></p>
-        <div class="divider"></div><!-- divides body and author -->
-        <h4 class="quote_author"><%= @quote.author %></h4>
-        <div class="vote_links">
-            <%= link_to like_quote_path(@quote), method: :put, class: "button_vote button_vote_up" do %>
-                <i class="fa fa-thumbs-up"></i>
-                <%= @quote.get_upvotes.size %>
-            <% end %>
-            <%= link_to dislike_quote_path(@quote), method: :put, class: "button_vote button_vote_down" do %>
-                <i class="fa fa-thumbs-down"></i>
-                <%= @quote.get_downvotes.size %>
-            <% end %>
-        </div>
-        <div id="credit">
-            <p>Submitted By: <%= "#{@quote.user.firstName} #{@quote.user.lastName}" %></p>
         </div>
     </div>
 </div>
 
-<div class="wrapper_skinny">
-    <% if @context.nil? %>
-        <div class="alert-alert-info">
-            <p>We know nothing about this quote. Please help the community if you do:</p>
-            <%= link_to "Add Context", new_quote_context_path(@quote), class: "btn btn-success" %>
-        </div>
-    <% else %>
-        <div class="context">
-            <nav>
-                <ul>
-                    <li><%= link_to "Edit Context", edit_quote_context_path(@quote, @context) %></li>
-                </ul>
-            </nav>
-            <p><%= markdown(@context.body) %></p>
-        </div>
-    <% end %>
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <% if @context.nil? %>
+            <div class="empty-state-container">
+                <div class="alert alert-info">
+                    <p>We know nothing about this quote. <br> Please help the community if you do by adding context below.</p>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <%= link_to "Add Context", new_quote_context_path(@quote), class: "btn btn-block" %>
+            </div>
+            
+        <% else %>
+            <div class="context">
+                <% if user_signed_in? %>
+                    <nav class="navbar navbar-default">
+                        <button type="button" id="button-utility-link" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#utility-links" aria-expanded="false">
+                                <i class="fa fa-chevron-down"></i>
+                                Options
+                        </button>
+                        <div class="collapse navbar-collapse" id="utility-links">
+                            <ul class="nav navbar-nav">
+                                <li><%= link_to "Edit Quote", edit_quote_path(@quote), class: "btn btn-default" %></li>
+                                <li><%= link_to "Edit Context", edit_quote_context_path(@quote, @context), class: "btn btn-default" %></li>
+                            </ul>
+                        </div>
+                    </nav>
+                <% end %>
+                <p><%= markdown(@context.body) %></p>
+            </div>
+        <% end %>
+    </div>
 </div>
 
