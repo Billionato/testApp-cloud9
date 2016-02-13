@@ -4,15 +4,18 @@
 
 <div class="container">
     <% @quotes.each do |quote| %>
-        <div class="row">
-            <div class="media">
-              <!--<div class="media-left media-middle">-->
-              <!--</div>-->
-              <div class="media-body">
-                <p class="quote-body"><%= quote.body %></p>
-                <h4 class="media-heading"><%= quote.author %></h4>
-              </div>
+            <div class="col-md-6">
+                <%= link_to quote_path(quote) do %>
+                    <div class="media">
+                      <!--<div class="media-left media-middle">-->
+                      <!--</div>-->
+                      <div class="media-body">
+                        <p class="quote-body"><%= quote.body %></p>
+                        <hr class="quote-divider"></hr>
+                        <h4 class="media-heading"><%= quote.author %></h4>
+                      </div>
+                    </div>
+                <% end %>
             </div>
-        </div>
     <% end %>
 </div>

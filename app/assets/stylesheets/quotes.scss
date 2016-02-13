@@ -30,10 +30,25 @@ body {
         font-weight: 600;
         margin-bottom: 3rem;
     }
+    .quote-divider {
+        height: 5px;
+        background: $dark;
+        border-radius: 5px;
+        width: 150px;
+    }
     .media-heading {
-        border: 0.25rem solid $dark;
+        //border: 0.25rem solid $dark;
         text-transform: uppercase;
         //width: 50%;
         padding: 3rem 0;
+    }
+}
+
+.col-md-6 {
+    a {
+        color: $dark;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

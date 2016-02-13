@@ -44,36 +44,40 @@ body {
 	
 }
 
-#main_header {
-	background: $white;
-	padding: 1.5rem 0;
-	
-	#logo {
-		float: left;
-		text-transform: uppercase;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1.5rem;
-		color: $dark;
-		letter-spacing: 1.5px;
-	}
-	
-	ul {
-		float: right;
-		list-style: none;
-		margin: 0; //remove default margin on ul
-		padding-top: 0.25rem;
-		li {
-			display: inline;
-			margin-left: 2rem;
-			a {
-				text-decoration: none;
-				color: $dark;
-				font-weight: 500;
-				&:hover {
-					color: $highlight;
-				}
-			}
-		}
-	}
+.main-header {
+    .container-fluid {
+        padding: 10px 25px;
+        //width: 60%;
+    }
+    #logo {
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 700;
+        padding: 5px 0;
+        letter-spacing: 1px;
+        float: left;
+        a {
+            text-decoration: none;
+            color: $dark;
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+    .navbar-toggle {
+        font-size: 22px;
+        float: right;
+        padding: 0 5px;
+    }
+    .navbar-nav {
+        li {
+           a {
+               font-size: 15px;
+               text-transform: uppercase;
+               &:hover {
+                   color: $green;
+               }
+           }
+        }
+    }
 }
