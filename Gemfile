@@ -28,6 +28,7 @@ gem 'rdiscount', '~> 2.1', '>= 2.1.8'
 
 #gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
